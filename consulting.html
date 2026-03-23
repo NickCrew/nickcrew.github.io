@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atlas Crew — Platform Engineering & Security Consulting</title>
-<meta name="description" content="Solo platform engineering and security consulting. Production platforms, security tooling, and AI-augmented development workflows.">
+<title>Atlas Crew — Product Engineering & Security Consulting</title>
+<meta name="description" content="End-to-end product engineering. Architecture through design system through production deployment. Security platforms, developer tools, and AI-augmented workflows.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M30 12c-14 3-20 10-20 20s6 17 20 20' fill='none' stroke='%23c4a882' stroke-width='2.5' stroke-linecap='round'/><path d='M22 52L35 12h3l13 40h-5l-2.5-8H29.5L27 52h-5z' fill='%23c8cdd6'/><path d='M31 38h11' stroke='%230b0d11' stroke-width='2.8'/><path d='M36.5 18l-4 14h8l-4-14z' fill='%230b0d11'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..900,0..1,0..1,0..1&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0b0d11;
@@ -31,14 +31,15 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Instrument Sans', -apple-system, sans-serif;
+    font-family: 'Recursive', -apple-system, sans-serif;
+    font-variation-settings: 'wght' 400, 'MONO' 0, 'CASL' 0.4, 'CRSV' 0.5, 'slnt' 0;
     font-size: 15px;
     line-height: 1.65;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
 
-  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .mono { font-variation-settings: 'wght' 400, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0; }
 
   /* ═══ TEXTURE ═══ */
   .noise {
@@ -81,9 +82,8 @@
   section { padding: 96px 0; }
 
   .section-label {
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 600, 'MONO' 1, 'CASL' 0.3, 'CRSV' 0.5, 'slnt' -4;
     font-size: 10px;
-    font-weight: 500;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--muted);
@@ -131,14 +131,14 @@
   }
 
   .nav-brand span {
-    font-weight: 600;
+    font-variation-settings: 'wght' 600, 'MONO' 0, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     font-size: 14px;
     letter-spacing: 0.3px;
   }
 
   .nav-links { display: flex; gap: 24px; }
   .nav-links a {
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 500, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     font-size: 12px;
     color: var(--muted);
     text-decoration: none;
@@ -156,7 +156,7 @@
   }
 
   .hero-intro {
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 500, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     font-size: 12px;
     color: var(--muted);
     letter-spacing: 1.5px;
@@ -166,7 +166,7 @@
 
   .hero h1 {
     font-size: clamp(32px, 4.5vw, 50px);
-    font-weight: 700;
+    font-variation-settings: 'wght' 300, 'MONO' 0, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     line-height: 1.15;
     letter-spacing: -1px;
     color: var(--text-bright);
@@ -193,9 +193,8 @@
     flex-direction: column;
   }
   .proof-value {
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 400, 'MONO' 1, 'CASL' 0.6, 'CRSV' 0.5, 'slnt' 0;
     font-size: 22px;
-    font-weight: 500;
     color: var(--accent-warm);
     line-height: 1;
   }
@@ -238,8 +237,8 @@
   .service-card:last-child { border-radius: 0 0 8px 0; }
 
   .service-card h3 {
+    font-variation-settings: 'wght' 500, 'MONO' 0, 'CASL' 0.2, 'CRSV' 0.5, 'slnt' 0;
     font-size: 16px;
-    font-weight: 600;
     color: var(--text-bright);
     margin-bottom: 8px;
   }
@@ -251,7 +250,7 @@
   }
 
   .service-tag {
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 500, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     font-size: 9px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -279,8 +278,8 @@
   .proof-card:hover { border-color: var(--border-hover); }
 
   .proof-card .project-name {
+    font-variation-settings: 'wght' 500, 'MONO' 0, 'CASL' 0.2, 'CRSV' 0.5, 'slnt' 0;
     font-size: 15px;
-    font-weight: 600;
     color: var(--text-bright);
     margin-bottom: 4px;
     display: flex;
@@ -289,7 +288,7 @@
   }
 
   .proof-card .project-type {
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 500, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     font-size: 10px;
     color: var(--muted);
     letter-spacing: 0.5px;
@@ -309,7 +308,7 @@
   }
 
   .proof-card .ps-item {
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 500, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     font-size: 11px;
   }
   .ps-item .ps-val { color: var(--accent-warm); }
@@ -323,7 +322,7 @@
   }
 
   .cap-col h3 {
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 500, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     font-size: 11px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -349,7 +348,7 @@
 
   .contact-section h2 {
     font-size: 28px;
-    font-weight: 600;
+    font-variation-settings: 'wght' 300, 'MONO' 0, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     color: var(--text-bright);
     margin-bottom: 12px;
     letter-spacing: -0.3px;
@@ -366,7 +365,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 500, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     font-size: 14px;
     color: var(--text);
     text-decoration: none;
@@ -391,14 +390,14 @@
   }
 
   .footer-text {
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 500, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     font-size: 11px;
     color: var(--muted);
   }
 
   .footer-links { display: flex; gap: 20px; }
   .footer-links a {
-    font-family: 'IBM Plex Mono', monospace;
+    font-variation-settings: 'wght' 500, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
     font-size: 11px;
     color: var(--muted);
     text-decoration: none;
@@ -460,16 +459,14 @@
     <div class="hero-intro reveal">Nicholas Crew Ferguson · Tampa Bay</div>
 
     <h1 class="reveal rd1">
-      I build the platforms<br>
-      your engineering team<br>
-      runs on.
+      I build the whole thing.
     </h1>
 
     <p class="hero-desc reveal rd2">
-      Solo platform engineering and security consulting. I design, build, and ship
-      production infrastructure — internal developer platforms, security tooling,
-      and AI-augmented workflows — typically as a one-person team operating at
-      startup speed inside larger organizations.
+      End-to-end product engineering. I take an idea from architecture through
+      design system through production deployment, typically as a one-person team.
+      Security platforms, developer tools, AI-augmented workflows. If it needs
+      a backend, a frontend, and infrastructure to run on, that's what I do.
     </p>
 
     <div class="hero-proof reveal rd3">
@@ -478,12 +475,12 @@
         <span class="proof-label">Production platforms in 11 months</span>
       </div>
       <div class="proof-stat">
-        <span class="proof-value">4,400×</span>
-        <span class="proof-label">WAF performance improvement</span>
+        <span class="proof-value">&lt;1ms</span>
+        <span class="proof-label">Edge detection latency</span>
       </div>
       <div class="proof-stat">
-        <span class="proof-value">~1000</span>
-        <span class="proof-label">Endpoints across security tooling</span>
+        <span class="proof-value">500+</span>
+        <span class="proof-label">Bot signatures / 22+ DLP patterns</span>
       </div>
     </div>
   </div>
@@ -499,12 +496,12 @@
   <div class="container">
     <div class="section-label reveal">About</div>
     <div class="about-text reveal rd1">
-      Most recently I built four major production platforms at A10 Networks under the
-      ThreatX brand — a <strong>Rust/Pingora WAF</strong> delivering a 4,400× throughput
-      improvement, a <strong>fleet management system</strong>, a <strong>multi-tenant security
-      testing platform</strong>, and a <strong>Linux endpoint agent</strong> — all solo, in
-      under a year. Before that, I built internal developer platforms and security tooling
-      across multiple organizations.
+      I build production security platforms under the Atlas Crew brand.
+      <strong>Synapse</strong> is an embedded detection engine (Rust/Pingora) running behavioral
+      analysis at the edge with campaign correlation, bot detection, and DLP scanning.
+      <strong>Horizon</strong> is the fleet intelligence platform that wraps it — SOC tooling,
+      sensor management, and real-time observability across distributed deployments.
+      Four major platforms, built solo, in under a year.
     </div>
     <div class="about-text reveal rd2" style="margin-top:16px;">
       I work best embedded with teams that need someone to own an entire platform surface
@@ -525,24 +522,24 @@
 
     <div class="services-grid">
       <div class="service-card reveal rd1">
-        <div class="service-tag">Platform</div>
-        <h3>Internal Developer Platforms</h3>
-        <p>End-to-end platform engineering — CI/CD, infrastructure provisioning, developer portals, and the glue that connects them. Designed for teams that need to move fast without drowning in ops.</p>
+        <div class="service-tag">End-to-end delivery</div>
+        <h3>Zero to Production</h3>
+        <p>Full product development from first commit to production deploy. Architecture, design system, backend, frontend, infrastructure. I've shipped complete platforms solo that teams of five quoted months for.</p>
       </div>
       <div class="service-card reveal rd2">
         <div class="service-tag">Security</div>
-        <h3>Security Tooling & Infrastructure</h3>
-        <p>WAF/reverse proxy architecture, fleet security management, vulnerability assessment platforms, and compliance automation. Production security at performance scale.</p>
+        <h3>Security Products</h3>
+        <p>Detection engines, fleet management, SOC tooling, bot mitigation, DLP. Not just config — I build the product your security team operates. Rust, Pingora, React, real-time data.</p>
       </div>
       <div class="service-card reveal rd3">
-        <div class="service-tag">AI</div>
-        <h3>AI-Augmented Workflows</h3>
-        <p>LLM integration into development and operations workflows. Not chatbots — real augmentation for code analysis, traffic pattern recognition, scenario generation, and automated testing.</p>
+        <div class="service-tag">DevOps</div>
+        <h3>Infrastructure & Platform</h3>
+        <p>CI/CD, Terraform, Kubernetes, developer portals, and the glue that connects them. The platform work that lets product teams move without drowning in ops.</p>
       </div>
       <div class="service-card reveal rd4">
-        <div class="service-tag">Product</div>
-        <h3>Solo Product Engineering</h3>
-        <p>Full-stack product development from zero to production. Architecture, implementation, testing, deployment, and handoff. I've shipped complete platforms alone that teams of five quoted months for.</p>
+        <div class="service-tag">AI</div>
+        <h3>AI-Augmented Products</h3>
+        <p>LLM integration into real products and workflows. Not chatbots — context orchestration, code analysis, traffic pattern recognition, and AI-augmented testing at production scale.</p>
       </div>
     </div>
   </div>
@@ -577,13 +574,22 @@
 
       <div class="proof-card reveal rd2">
         <div class="project-name">
-          Synapse WAF
+          <svg width="16" height="16" viewBox="0 0 110 110" fill="none">
+            <line x1="55" y1="55" x2="28" y2="24" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="square"/>
+            <line x1="55" y1="55" x2="82" y2="24" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="square"/>
+            <line x1="55" y1="55" x2="90" y2="50" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="square"/>
+            <line x1="55" y1="55" x2="26" y2="76" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="square"/>
+            <line x1="55" y1="55" x2="78" y2="86" stroke="#8B5CF6" stroke-width="3.5" stroke-linecap="square"/>
+            <circle cx="78" cy="86" r="5.5" fill="#8B5CF6"/>
+            <circle cx="55" cy="55" r="7" fill="none" stroke="#1E90FF" stroke-width="3"/>
+          </svg>
+          Synapse
         </div>
-        <div class="project-type">A10 Networks / ThreatX · Production</div>
-        <p>Complete WAF rebuild in Rust with Cloudflare's Pingora framework. Replaced legacy infrastructure with a high-performance reverse proxy delivering transformational throughput gains.</p>
+        <div class="project-type">Atlas Crew · Edge detection engine</div>
+        <p>Embedded detection engine built on Rust/Pingora. Campaign correlation, bot detection (500+ signatures), DLP scanning (22+ patterns), behavioral analysis — all at the edge, no cloud round-trips.</p>
         <div class="proof-stats">
-          <span class="ps-item"><span class="ps-val">4,400×</span><span class="ps-lbl">throughput</span></span>
-          <span class="ps-item"><span class="ps-val">Solo</span><span class="ps-lbl">in 2 months</span></span>
+          <span class="ps-item"><span class="ps-val">&lt;1ms</span><span class="ps-lbl">detection</span></span>
+          <span class="ps-item"><span class="ps-val">500+</span><span class="ps-lbl">bot sigs</span></span>
         </div>
       </div>
 
