@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nicholas Crew Ferguson — atlascrew.dev</title>
 <meta name="description" content="Product engineering, security platforms, and AI-augmented development. Open source projects and consulting.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M30 12c-14 3-20 10-20 20s6 17 20 20' fill='none' stroke='%23c4a882' stroke-width='2.5' stroke-linecap='round'/><path d='M22 52L35 12h3l13 40h-5l-2.5-8H29.5L27 52h-5z' fill='%23c8cdd6'/><path d='M31 38h11' stroke='%230b0d11' stroke-width='2.8'/><path d='M36.5 18l-4 14h8l-4-14z' fill='%230b0d11'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M40 8 A26 26 0 1 0 40 56' fill='none' stroke='%23c4a882' stroke-width='5' stroke-linecap='square'/><path d='M20 50 L32 14 L44 50' fill='none' stroke='%23d8dce4' stroke-width='2.2' stroke-linecap='square' stroke-linejoin='miter'/><line x1='8' y1='34' x2='56' y2='34' stroke='%23c4a882' stroke-width='1.2'/><line x1='10' y1='40' x2='56' y2='40' stroke='%23c4a882' stroke-width='0.8' opacity='0.35'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..900,0..1,0..1,0..1&display=swap" rel="stylesheet">
@@ -27,6 +27,9 @@
     --blue-facet-dark: #2d6a96;
     --purple: #a478e8;
     --purple-light: #b98ef0;
+    --green: #4ade80;
+    --amber: #f59e0b;
+    --pink: #f472b6;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -85,7 +88,7 @@
     text-decoration: none;
     color: var(--text);
   }
-  .nav-brand span { font-variation-settings: 'wght' 600, 'MONO' 0, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0; font-size: 14px; letter-spacing: 0.3px; }
+  .nav-brand span { font-variation-settings: 'wght' 350, 'MONO' 0, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; }
   .nav-links { display: flex; gap: 20px; }
   .nav-links a {
     font-variation-settings: 'wght' 500, 'MONO' 1, 'CASL' 0, 'CRSV' 0.5, 'slnt' -2;
@@ -103,7 +106,7 @@
   }
   .hero-name {
     font-size: clamp(28px, 4vw, 42px);
-    font-variation-settings: 'wght' 300, 'MONO' 0, 'CASL' 0, 'CRSV' 0.5, 'slnt' 0;
+    font-variation-settings: 'wght' 600, 'MONO' 0, 'CASL' 0.5, 'CRSV' 0.5, 'slnt' 0;
     color: var(--text-bright);
     letter-spacing: -0.5px;
     line-height: 1.15;
@@ -283,6 +286,49 @@
   }
   .footer-links a:hover { color: var(--text); }
 
+  /* Small-project compact rows */
+  .small-projects { padding: 64px 0 80px; }
+  .sp-list { display: flex; flex-direction: column; gap: 2px; }
+
+  .sp-card {
+    background: var(--bg-raised);
+    padding: 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.3s;
+    position: relative;
+  }
+  .sp-card:first-child { border-radius: 10px 10px 0 0; }
+  .sp-card:last-child { border-radius: 0 0 10px 10px; }
+  .sp-card:only-child { border-radius: 10px; }
+  .sp-card:hover { background: var(--bg-hover); }
+  .sp-card:hover .card-arrow { opacity: 0.6; transform: translateX(2px); }
+
+  .sp-icon { flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
+
+  .sp-body { flex: 1; min-width: 0; }
+  .sp-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; flex-wrap: wrap; }
+  .sp-header h3 {
+    font-size: 17px;
+    font-variation-settings: 'wght' 500, 'MONO' 0, 'CASL' 0.2, 'CRSV' 0.5, 'slnt' 0;
+    color: var(--text-bright);
+    letter-spacing: -0.2px;
+  }
+  .sp-tag {
+    font-variation-settings: 'wght' 600, 'MONO' 1, 'CASL' 0.3, 'CRSV' 0.5, 'slnt' -4;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .sp-body p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
   /* Responsive */
   @media (max-width: 768px) {
     .container, .nav-inner { padding: 0 24px; }
@@ -297,6 +343,8 @@
     .nav-links { display: none; }
     .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
     .hero { padding: 48px 0 40px; }
+    .sp-card { padding: 20px 24px; gap: 16px; }
+    .small-projects { padding: 48px 0 60px; }
   }
 </style>
 </head>
@@ -309,17 +357,17 @@
   <div class="nav-inner">
     <a href="#" class="nav-brand">
       <svg width="22" height="22" viewBox="0 0 64 64" fill="none">
-        <path d="M30 12c-14 3-20 10-20 20s6 17 20 20" fill="none" stroke="var(--warm)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M22 52L35 12h3l13 40h-5l-2.5-8H29.5L27 52h-5z" fill="var(--text)" opacity="0.9"/>
-        <path d="M31 38h11" stroke="var(--bg)" stroke-width="2.8"/>
-        <path d="M36.5 18l-4 14h8l-4-14z" fill="var(--bg)"/>
+        <path d="M40 8 A26 26 0 1 0 40 56" fill="none" stroke="var(--warm)" stroke-width="5" stroke-linecap="square"/>
+        <path d="M20 50 L32 14 L44 50" fill="none" stroke="var(--text)" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/>
+        <line x1="8" y1="34" x2="56" y2="34" stroke="var(--warm)" stroke-width="1.2"/>
+        <line x1="10" y1="40" x2="56" y2="40" stroke="var(--warm)" stroke-width="0.8" opacity="0.35"/>
       </svg>
       <span>Atlas Crew</span>
     </a>
     <div class="nav-links">
       <a href="https://github.com/NickCrew">GitHub</a>
       <a href="https://linkedin.com/in/ncferguson">LinkedIn</a>
-      <a href="https://nickcrew.github.io/resume">About</a>
+      <a href="https://nickcrew.github.io/resume">Portfolio</a>
       <a href="mailto:nick@atlascrew.dev">Contact</a>
     </div>
   </div>
@@ -337,7 +385,7 @@
     <div class="hero-meta reveal rd2">
       <span>Tampa Bay, FL</span>
       <a href="mailto:nick@atlascrew.dev">nick@atlascrew.dev</a>
-      <a style="font-weight: 600" href="https://nickcrew.github.io/resume">Resume →</a>
+      <a style="font-weight: 600" href="https://nickcrew.github.io/resume">My Portfolio →</a>
     </div>
   </div>
 </section>
@@ -409,9 +457,26 @@
         Zero external dependencies. True air-gap deployment.
       </p>
       <div class="hero-card-stats">
-        <div><div class="hero-card-stat-val" style="color:#F97316;">Rust</div><div class="hero-card-stat-lbl">Pingora</div></div>
-        <div><div class="hero-card-stat-val" style="color:#1E90FF;">React</div><div class="hero-card-stat-lbl">TypeScript</div></div>
-        <div><div class="hero-card-stat-val" style="color:#8B5CF6;">Sub-millisecond</div><div class="hero-card-stat-lbl">Detection Latency</div></div>
+        <div>
+           <div class="hero-card-stat-val" style="color:#F97316;">Rust</div>   
+           <div class="hero-card-stat-lbl">pingora</div>
+        </div>
+        <div>
+          <div class="hero-card-stat-val" style="color:#8B5Cf6;">72K+</div>   
+          <div class="hero-card-stat-lbl">Req/sec</div>
+        </div>
+        <div>
+          <div class="hero-card-stat-val" style="color:#1E90FF;">25MB</div>   
+          <div class="hero-card-stat-lbl">Binary</div>
+        </div>
+        <div>
+          <div class="hero-card-stat-val" style="color:#FFF;">~450μs</div>    
+          <div class="hero-card-stat-lbl">e2e latency</div>
+        </div>
+        <div>
+          <div class="hero-card-stat-val" style="color:#F97316;">AGPL-3</div> 
+          <div class="hero-card-stat-lbl">License</div>
+        </div>
       </div>
     </a>
 
@@ -520,12 +585,12 @@
       <a href="consulting.html" class="project-card reveal rd4">
         <span class="card-arrow">→</span>
         <div class="card-icon">
-          <!-- AC monogram R4 -->
+          <!-- Atlas Crew mark -->
           <svg width="38" height="38" viewBox="0 0 64 64" fill="none">
-            <path d="M30 12c-14 3-20 10-20 20s6 17 20 20" fill="none" stroke="var(--warm)" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M22 52L35 12h3l13 40h-5l-2.5-8H29.5L27 52h-5z" fill="var(--text)" opacity="0.9"/>
-            <path d="M31 38h11" stroke="var(--bg-raised)" stroke-width="2.8"/>
-            <path d="M36.5 18l-4 14h8l-4-14z" fill="var(--bg-raised)"/>
+            <path d="M40 8 A26 26 0 1 0 40 56" fill="none" stroke="var(--warm)" stroke-width="5" stroke-linecap="square"/>
+            <path d="M20 50 L32 14 L44 50" fill="none" stroke="var(--text)" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/>
+            <line x1="8" y1="34" x2="56" y2="34" stroke="var(--warm)" stroke-width="1.2"/>
+            <line x1="10" y1="40" x2="56" y2="40" stroke="var(--warm)" stroke-width="0.8" opacity="0.35"/>
           </svg>
         </div>
         <h2>Consulting</h2>
@@ -546,23 +611,159 @@
   </div>
 </section>
 
+<hr class="divider">
+
+<!-- Tools & Utilities -->
+<section class="small-projects">
+  <div class="container">
+    <div class="section-label reveal">Tools & Utilities</div>
+    <div class="sp-list">
+
+      <!-- Backlog.md Raycast Extension -->
+      <a href="https://github.com/NickCrew/backlog-md-raycast" class="sp-card reveal rd1">
+        <span class="card-arrow">→</span>
+        <div class="sp-icon">
+          <svg width="36" height="36" viewBox="0 0 110 110" fill="none">
+            <rect x="20" y="30" width="70" height="8" rx="2" fill="#f59e0b" opacity="0.7"/>
+            <rect x="20" y="46" width="50" height="8" rx="2" fill="#f59e0b" opacity="0.45"/>
+            <rect x="20" y="62" width="60" height="8" rx="2" fill="#f59e0b" opacity="0.25"/>
+            <path d="M80 52 l8 8 l16-18" fill="none" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="sp-body">
+          <div class="sp-header">
+            <h3>Backlog.md Raycast</h3>
+            <span class="sp-tag" style="color:#f59e0b;">Raycast Extension</span>
+          </div>
+          <p>Manage Backlog.md tasks directly from Raycast. Browse, create, search, and edit tasks across multiple projects without leaving your launcher.</p>
+        </div>
+      </a>
+
+      <!-- Committer — Safe Agent Commits -->
+      <a href="https://gist.github.com/NickCrew/583ed6c303d6090aa479ad6df7c26a12" class="sp-card reveal rd2">
+        <span class="card-arrow">→</span>
+        <div class="sp-icon">
+          <svg width="36" height="36" viewBox="0 0 110 110" fill="none">
+            <circle cx="55" cy="55" r="22" fill="none" stroke="#60a5fa" stroke-width="3" opacity="0.5"/>
+            <circle cx="55" cy="55" r="8" fill="#60a5fa" opacity="0.7"/>
+            <line x1="55" y1="33" x2="55" y2="14" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+            <circle cx="55" cy="14" r="4" fill="none" stroke="#60a5fa" stroke-width="2" opacity="0.4"/>
+            <line x1="73" y1="65" x2="88" y2="78" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+            <circle cx="91" cy="81" r="4" fill="none" stroke="#60a5fa" stroke-width="2" opacity="0.4"/>
+            <line x1="37" y1="65" x2="22" y2="78" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+            <circle cx="19" cy="81" r="4" fill="none" stroke="#60a5fa" stroke-width="2" opacity="0.4"/>
+            <path d="M46 52 l6 6 l12-14" fill="none" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="sp-body">
+          <div class="sp-header">
+            <h3>Committer</h3>
+            <span class="sp-tag" style="color:#60a5fa;">Bash Utility</span>
+          </div>
+          <p>Safe git commit wrapper for AI agents. Validates file paths, blocks bulk staging, and supports hunk-based patch staging for precise, line-level commits.</p>
+        </div>
+      </a>
+
+      <!-- ShellCandy -->
+      <a href="https://github.com/NickCrew/shellcandy" class="sp-card reveal rd3">
+        <span class="card-arrow">→</span>
+        <div class="sp-icon">
+          <svg width="36" height="36" viewBox="0 0 110 110" fill="none">
+            <rect x="18" y="22" width="74" height="66" rx="8" fill="none" stroke="#f472b6" stroke-width="2.5" opacity="0.45"/>
+            <rect x="18" y="22" width="74" height="14" rx="8" fill="#f472b6" opacity="0.15"/>
+            <circle cx="30" cy="29" r="2.5" fill="#f472b6" opacity="0.5"/>
+            <circle cx="39" cy="29" r="2.5" fill="#f472b6" opacity="0.35"/>
+            <circle cx="48" cy="29" r="2.5" fill="#f472b6" opacity="0.2"/>
+            <text x="28" y="56" fill="#f472b6" font-family="monospace" font-size="11" opacity="0.8">▓▓▓▓▓░░</text>
+            <text x="28" y="72" fill="#f472b6" font-family="monospace" font-size="11" opacity="0.5">┌─────┐</text>
+            <text x="28" y="82" fill="#f472b6" font-family="monospace" font-size="11" opacity="0.5">│ ✓   │</text>
+          </svg>
+        </div>
+        <div class="sp-body">
+          <div class="sp-header">
+            <h3>ShellCandy</h3>
+            <span class="sp-tag" style="color:#f472b6;">Bash Framework</span>
+          </div>
+          <p>Pure Bash framework for beautiful terminal UIs. Menus, charts, tables, progress bars, forms, and 256-color support — 60+ functions, zero external dependencies.</p>
+        </div>
+      </a>
+
+      <!-- Tmux Local Services Helper -->
+      <a href="https://gist.github.com/NickCrew/b37dd42e9c88f339582409767948b5f4" class="sp-card reveal rd4">
+        <span class="card-arrow">→</span>
+        <div class="sp-icon">
+          <svg width="36" height="36" viewBox="0 0 110 110" fill="none">
+            <rect x="15" y="20" width="80" height="70" rx="6" fill="none" stroke="#4ade80" stroke-width="3" opacity="0.5"/>
+            <line x1="55" y1="20" x2="55" y2="90" stroke="#4ade80" stroke-width="2" opacity="0.35"/>
+            <line x1="15" y1="55" x2="55" y2="55" stroke="#4ade80" stroke-width="2" opacity="0.35"/>
+            <text x="27" y="43" fill="#4ade80" font-family="monospace" font-size="14" opacity="0.8">$_</text>
+            <text x="62" y="43" fill="#4ade80" font-family="monospace" font-size="14" opacity="0.5">$_</text>
+            <text x="27" y="78" fill="#4ade80" font-family="monospace" font-size="14" opacity="0.5">$_</text>
+          </svg>
+        </div>
+        <div class="sp-body">
+          <div class="sp-header">
+            <h3>txh — Tmux Helper</h3>
+            <span class="sp-tag" style="color:#4ade80;">Bash Utility</span>
+          </div>
+          <p>Command-line helper for tmux window management during development. Send commands, read output, and monitor process status across sessions — built for agent-driven workflows.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Writing -->
+<section class="small-projects">
+  <div class="container">
+    <div class="section-label reveal">Writing</div>
+    <div class="sp-list">
+
+      <!-- The Process -->
+      <a href="facet-method.html" class="sp-card reveal rd1">
+        <span class="card-arrow">→</span>
+        <div class="sp-icon">
+          <svg width="36" height="36" viewBox="0 0 110 110" fill="none">
+            <rect x="24" y="16" width="62" height="78" rx="4" fill="none" stroke="var(--blue-facet)" stroke-width="2.5" opacity="0.4"/>
+            <line x1="36" y1="34" x2="74" y2="34" stroke="var(--blue-facet)" stroke-width="2" opacity="0.5"/>
+            <line x1="36" y1="48" x2="68" y2="48" stroke="var(--blue-facet)" stroke-width="2" opacity="0.35"/>
+            <line x1="36" y1="62" x2="72" y2="62" stroke="var(--blue-facet)" stroke-width="2" opacity="0.25"/>
+            <line x1="36" y1="76" x2="56" y2="76" stroke="var(--blue-facet)" stroke-width="2" opacity="0.15"/>
+          </svg>
+        </div>
+        <div class="sp-body">
+          <div class="sp-header">
+            <h3>The Facet Method</h3>
+            <span class="sp-tag" style="color:var(--blue-facet);">Methodology</span>
+          </div>
+          <p>How I used AI to build a structured interview prep system. A 4-phase pipeline — candidate profiling, company research, study guides, cheat sheets — where each step's output feeds the next.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div class="footer-text">
         <svg width="14" height="14" viewBox="0 0 64 64" fill="none">
-          <path d="M30 12c-14 3-20 10-20 20s6 17 20 20" fill="none" stroke="var(--muted)" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M22 52L35 12h3l13 40h-5l-2.5-8H29.5L27 52h-5z" fill="var(--muted)"/>
-          <path d="M31 38h11" stroke="var(--bg)" stroke-width="2.8"/>
-          <path d="M36.5 18l-4 14h8l-4-14z" fill="var(--bg)"/>
+          <path d="M40 8 A26 26 0 1 0 40 56" fill="none" stroke="var(--muted)" stroke-width="5" stroke-linecap="square"/>
+          <path d="M20 50 L32 14 L44 50" fill="none" stroke="var(--muted)" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/>
+          <line x1="8" y1="34" x2="56" y2="34" stroke="var(--muted)" stroke-width="1.2"/>
+          <line x1="10" y1="40" x2="56" y2="40" stroke="var(--muted)" stroke-width="0.8" opacity="0.35"/>
         </svg>
         atlascrew.dev · Tampa Bay
       </div>
       <div class="footer-links">
         <a href="https://github.com/NickCrew">GitHub</a>
         <a href="https://linkedin.com/in/ncferguson">LinkedIn</a>
-        <a href="https://nickcrew.github.io/resume">Resume</a>
+        <a href="https://nickcrew.github.io/resume">Portfolio</a>
         <a href="mailto:nick@atlascrew.dev">Email</a>
       </div>
     </div>
